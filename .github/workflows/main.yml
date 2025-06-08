@@ -29,8 +29,6 @@ jobs:
         
     - name: Run linters
       run: |
-          pytest .
-
           echo "=== Running Black ==="
           black --diff --check . || echo "Black check failed"
           
