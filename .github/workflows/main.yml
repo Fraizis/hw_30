@@ -30,14 +30,18 @@ jobs:
     - name: Run linters
       run: |
           echo "=== Running Black ==="
-          black --diff --check . || echo "Black check failed"
+          black --diff --check . 
+          echo "Black check finished"
           
           echo "=== Running isort ==="
-          isort --check-only --diff . || echo "isort check failed"
+          isort --check-only --diff . 
+          echo "isort check finished"
           
           echo "=== Running flake8 ==="
-          flake8 . || echo "flake8 check failed"
+          flake8 . 
+          echo "flake8 check finished"
           
           echo "=== Running mypy ==="
-          mypy . || echo "mypy check failed"
+          mypy . 
+          echo "mypy check finished"
 
