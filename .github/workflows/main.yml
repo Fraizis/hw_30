@@ -29,19 +29,11 @@ jobs:
         
     - name: Run linters
       run: |
-          echo "=== Running Black ==="
           black --diff --check . 
-          echo "Black check finished"
           
-          echo "=== Running isort ==="
           isort --check-only --diff . 
-          echo "isort check finished"
           
-          echo "=== Running flake8 ==="
           flake8 . 
-          echo "flake8 check finished"
           
-          echo "=== Running mypy ==="
           mypy . 
-          echo "mypy check finished"
 
