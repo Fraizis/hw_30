@@ -31,5 +31,5 @@ jobs:
       run: |
           black --diff --check . 
           
-          isort --check-only --diff . 
+          isort --check-only --diff --profile black . 
 
