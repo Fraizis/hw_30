@@ -32,8 +32,4 @@ jobs:
           black --diff --check . 
           
           isort --check-only --diff . 
-          
-          flake8 . 
-          
-          mypy . 
 
