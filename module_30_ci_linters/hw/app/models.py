@@ -28,6 +28,9 @@ class Client(db.Model):
         )
 
     def to_json(self) -> Dict[str, Any]:
+        """
+        Method to JSON
+        """
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 
@@ -54,6 +57,9 @@ class Parking(db.Model):
         )
 
     def to_json(self) -> Dict[str, Any]:
+        """
+        Method to JSON
+        """
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 
@@ -85,4 +91,7 @@ class ClientParking(db.Model):
         )
 
     def to_json(self) -> Dict[str, Any]:
+        """
+        Method to JSON
+        """
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}

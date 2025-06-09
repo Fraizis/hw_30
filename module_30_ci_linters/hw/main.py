@@ -9,6 +9,9 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 def create_app():
+    """
+    Starting app
+    """
     app = Flask(__name__)
     app.register_blueprint(url_blueprint)
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(
