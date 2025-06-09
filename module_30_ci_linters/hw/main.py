@@ -1,8 +1,9 @@
-from flask import Flask
 import os
 
-from module_30_ci_linters.hw.app.database import db
-from module_30_ci_linters.hw.app.routes import url_blueprint
+from flask import Flask
+
+from app.database import db
+from app.routes import url_blueprint
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -10,7 +11,9 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 def create_app():
     app = Flask(__name__)
     app.register_blueprint(url_blueprint)
-    app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///' + os.path.join(basedir, 'hw.db')
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(
+        basedir, "hw.db"
+    )
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.init_app(app)
 
@@ -24,6 +27,6 @@ def create_app():
     return app
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app = create_app()
     app.run(debug=True)
