@@ -2,6 +2,7 @@ import random
 
 import factory
 import factory.fuzzy as fuzzy
+
 from module_30_ci_linters.hw.app.database import db
 from module_30_ci_linters.hw.app.models import Client, Parking
 
