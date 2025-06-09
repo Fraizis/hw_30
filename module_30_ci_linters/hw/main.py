@@ -1,8 +1,9 @@
 import os
 
-from app.database import db
-from app.routes import url_blueprint
 from flask import Flask
+
+from module_30_ci_linters.hw.app.database import db
+from module_30_ci_linters.hw.app.routes import url_blueprint
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
