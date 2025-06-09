@@ -33,3 +33,9 @@ jobs:
           
           isort --check-only --diff --profile black . 
 
+          flake8 .
+
+          pylint .
+
+          mypy .
+          
