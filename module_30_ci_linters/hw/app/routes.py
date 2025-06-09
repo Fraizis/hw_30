@@ -182,8 +182,6 @@ def delete_parking():
     db.session.commit()
 
     if client.credit_card is None:
-        return (
-            f"Клиент расплатился наличными\n" f"{client_parking_place.to_json()}"
-        ), 201
+        return f"Клиент расплатился наличными\n{client_parking_place.to_json()}", 201
 
     return jsonify(client_parking_place.to_json()), 201
