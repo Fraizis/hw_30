@@ -1,8 +1,8 @@
 from datetime import datetime
 import pytest
 
-from module_29_testing.hw.app.models import Client, Parking, ClientParking
-from module_29_testing.hw.main import create_app, db as _db
+from module_30_ci_linters.hw.app.models import Client, Parking, ClientParking
+from module_30_ci_linters.hw.main import create_app, db as _db
 
 
 @pytest.fixture
