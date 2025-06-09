@@ -27,34 +27,19 @@ def app():
             car_number="car_number",
         )
         client_3 = Client(
-            name="name",
-            surname="surname",
-            credit_card=None,
-            car_number="car_number"
+            name="name", surname="surname", credit_card=None, car_number="car_number"
         )
         parking_1 = Parking(
-            address="address",
-            opened=1,
-            count_places=10,
-            count_available_places=5
+            address="address", opened=1, count_places=10, count_available_places=5
         )
         parking_2 = Parking(
-            address="address",
-            opened=0,
-            count_places=5,
-            count_available_places=5
+            address="address", opened=0, count_places=5, count_available_places=5
         )
         parking_3 = Parking(
-            address="address",
-            opened=1,
-            count_places=5,
-            count_available_places=0
+            address="address", opened=1, count_places=5, count_available_places=0
         )
         client_parking_1 = ClientParking(
-            client_id=1,
-            parking_id=1,
-            time_in=datetime.now(),
-            time_out=datetime.now()
+            client_id=1, parking_id=1, time_in=datetime.now(), time_out=datetime.now()
         )
         client_parking_2 = ClientParking(
             client_id=3,

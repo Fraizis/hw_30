@@ -106,8 +106,7 @@ def test_client_parking_twice(client) -> None:
     resp = client.post("/client_parking", json=client_data)
     assert (
         f"Клиент с id {client_data['client_id']} "
-        f"уже припаркован на стоянке с id {client_data['parking_id']}"
-        in resp.text
+        f"уже припаркован на стоянке с id {client_data['parking_id']}" in resp.text
     )
     assert resp.status_code == 406
     assert resp.status_code != 400

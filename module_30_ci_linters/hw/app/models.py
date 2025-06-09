@@ -71,10 +71,7 @@ class ClientParking(db.Model):
     parking_id = db.Column(db.Integer, db.ForeignKey("parking.id"))
 
     __table_args__ = (
-        UniqueConstraint(
-            "client_id",
-            "parking_id",
-            name="unique_client_parking"),
+        UniqueConstraint("client_id", "parking_id", name="unique_client_parking"),
     )
 
     client = db.relationship("Client", backref="client_parking")
