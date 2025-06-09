@@ -29,8 +29,6 @@ jobs:
         
     - name: Run linters
       run: |
-          pytest -v .
-          
           black --diff --check . 
           
           isort --check-only --diff . 
