@@ -141,8 +141,8 @@ def reserve_parking():
 
     except sqlalchemy.exc.IntegrityError:
         return (
-            f"Клиент с id {data['client_id']} уже припаркован на стоянке с id {data['parking_id']}",
-            406,
+            f"Клиент с id {data['client_id']} "
+            f"уже припаркован на стоянке с id {data['parking_id']}", 406
         )
 
 
@@ -181,6 +181,7 @@ def delete_parking():
     db.session.commit()
 
     if client.credit_card is None:
-        return f"Клиент расплатился наличными\n{client_parking_place.to_json()}", 201
+        return (f"Клиент расплатился наличными\n"
+                f"{client_parking_place.to_json()}"), 201
 
     return jsonify(client_parking_place.to_json()), 201

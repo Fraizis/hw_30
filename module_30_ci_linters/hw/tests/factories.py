@@ -25,4 +25,6 @@ class ParkingFactory(factory.alchemy.SQLAlchemyModelFactory):
     address = fuzzy.FuzzyText(prefix="address ")
     opened = fuzzy.FuzzyChoice([True, False])
     count_places = factory.LazyAttribute(lambda x: random.randint(5, 10))
-    count_available_places = factory.LazyAttribute(lambda x: random.randint(1, 5))
+    count_available_places = factory.LazyAttribute(
+        lambda x: random.randint(1, 5)
+    )

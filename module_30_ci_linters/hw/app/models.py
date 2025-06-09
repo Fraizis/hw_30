@@ -46,8 +46,11 @@ class Parking(db.Model):
 
     def __repr__(self):
         return (
-            f"Parking id: {self.id}, address: {self.address}, opened: {self.opened}, "
-            f"count_places: {self.count_places}, count_available_places: {self.count_available_places}"
+            f"Parking id: {self.id}, "
+            f"address: {self.address}, "
+            f"opened: {self.opened}, "
+            f"count_places: {self.count_places}, "
+            f"count_available_places: {self.count_available_places}"
         )
 
     def to_json(self) -> Dict[str, Any]:
@@ -68,7 +71,10 @@ class ClientParking(db.Model):
     parking_id = db.Column(db.Integer, db.ForeignKey("parking.id"))
 
     __table_args__ = (
-        UniqueConstraint("client_id", "parking_id", name="unique_client_parking"),
+        UniqueConstraint(
+            "client_id",
+            "parking_id",
+            name="unique_client_parking"),
     )
 
     client = db.relationship("Client", backref="client_parking")
@@ -76,7 +82,9 @@ class ClientParking(db.Model):
 
     def __repr__(self):
         return (
-            f"Parking id: {self.id}, time_in: {self.time_in}, time_out: {self.time_out}"
+            f"Parking id: {self.id}, "
+            f"time_in: {self.time_in}, "
+            f"time_out: {self.time_out}"
         )
 
     def to_json(self) -> Dict[str, Any]:
