@@ -1,14 +1,18 @@
+"""
+Модуль с настройками для тестирования с pytest
+"""
+
 from datetime import datetime
 
 import pytest
-
-from module_30_ci_linters.hw.app.models import Client, ClientParking, Parking
-from module_30_ci_linters.hw.main import create_app
-from module_30_ci_linters.hw.main import db as _db
+from module_30_ci_linters.homework.hw1.app.models import Client, ClientParking, Parking
+from module_30_ci_linters.homework.hw1.main import create_app
+from module_30_ci_linters.homework.hw1.main import db as _db
 
 
 @pytest.fixture
 def app():
+    """Приложение с настройками для запуска тестирования"""
     _app = create_app()
     _app.config["TESTING"] = True
     _app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite://"
@@ -59,12 +63,14 @@ def app():
 
 
 @pytest.fixture
-def client(app):
-    client = app.test_client()
-    yield client
+def client(app_client):
+    """Фикстура клиент"""
+    client_test = app_client.test_client()
+    yield client_test
 
 
 @pytest.fixture
-def db(app):
-    with app.app_context():
+def db(app_client):
+    """Фикстура бд"""
+    with app_client.app_context():
         yield _db

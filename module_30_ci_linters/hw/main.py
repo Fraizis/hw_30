@@ -1,17 +1,19 @@
+"""
+Модуль с настройками и запуском приложения
+"""
+
 import os
 
 from flask import Flask
 
-from module_30_ci_linters.hw.app.database import db
-from module_30_ci_linters.hw.app.routes import url_blueprint
+from app.database import db
+from app.routes import url_blueprint
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 def create_app():
-    """
-    Starting app
-    """
+    """Функция с настройками, создание бд и удаление сеанса"""
     app = Flask(__name__)
     app.register_blueprint(url_blueprint)
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(
@@ -31,5 +33,5 @@ def create_app():
 
 
 if __name__ == "__main__":
-    app = create_app()
-    app.run(debug=True)
+    app_ = create_app()
+    app_.run(debug=True)

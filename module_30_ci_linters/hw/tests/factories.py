@@ -1,14 +1,19 @@
+"""
+Модуль с классами для тестов с factory
+"""
+
 import random
 
 import factory
-import factory.fuzzy as fuzzy
-
-from module_30_ci_linters.hw.app.database import db
-from module_30_ci_linters.hw.app.models import Client, Parking
+from factory import fuzzy
+from module_30_ci_linters.homework.hw1.app.database import db
+from module_30_ci_linters.homework.hw1.app.models import Client, Parking
 
 
 class ClientFactory(factory.alchemy.SQLAlchemyModelFactory):
+    """Класс для тестирования бд Client"""
     class Meta:
+        """Мета класс"""
         model = Client
         sqlalchemy_session = db.session
 
@@ -19,7 +24,9 @@ class ClientFactory(factory.alchemy.SQLAlchemyModelFactory):
 
 
 class ParkingFactory(factory.alchemy.SQLAlchemyModelFactory):
+    """Класс для тестирования бд Client"""
     class Meta:
+        """Мета класс"""
         model = Parking
         sqlalchemy_session = db.session
 

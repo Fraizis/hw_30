@@ -5,4 +5,3 @@ flake8-pie
 isort
 mypy
 pytest
-pylint

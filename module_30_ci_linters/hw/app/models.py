@@ -1,3 +1,7 @@
+"""
+Модуль с таблицами для бд
+"""
+
 from typing import Any, Dict
 
 from sqlalchemy import UniqueConstraint
@@ -28,16 +32,12 @@ class Client(db.Model):
         )
 
     def to_json(self) -> Dict[str, Any]:
-        """
-        Method to JSON
-        """
+        """Метод класса приводит в json формат"""
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 
 class Parking(db.Model):
-    """
-    Модель таблицы parking
-    """
+    """Модель таблицы parking"""
 
     __tablename__ = "parking"
 
@@ -57,16 +57,12 @@ class Parking(db.Model):
         )
 
     def to_json(self) -> Dict[str, Any]:
-        """
-        Method to JSON
-        """
+        """Метод класса приводит в json формат"""
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 
 class ClientParking(db.Model):
-    """
-    Модель таблицы client_parking
-    """
+    """Модель таблицы client_parking"""
 
     __tablename__ = "client_parking"
 
@@ -91,7 +87,5 @@ class ClientParking(db.Model):
         )
 
     def to_json(self) -> Dict[str, Any]:
-        """
-        Method to JSON
-        """
+        """Метод класса приводит в json формат"""
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
