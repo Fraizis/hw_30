@@ -5,6 +5,7 @@
 from datetime import datetime
 
 import pytest
+
 from module_30_ci_linters.homework.hw1.app.models import Client, ClientParking, Parking
 from module_30_ci_linters.homework.hw1.main import create_app
 from module_30_ci_linters.homework.hw1.main import db as _db
