@@ -6,9 +6,9 @@ from datetime import datetime
 
 import pytest
 
-from app.main import create_app
-from app.main import db as _db
-from app.models import Client, ClientParking, Parking
+from hw.app.main import create_app
+from hw.app.main import db as _db
+from hw.app.models import Client, ClientParking, Parking
 
 
 @pytest.fixture
