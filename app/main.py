@@ -26,7 +26,7 @@ def create_app():
         db.create_all()
 
     @app.teardown_appcontext
-    def shutdown_session(exception=None):
+    def shutdown_session(exception=None):  # pylint: disable=unused-argument
         db.session.remove()
 
     return app
