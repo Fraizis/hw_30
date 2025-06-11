@@ -21,7 +21,7 @@ def get_all_clients():
     """
     Получение клиентов
     """
-    clients: List[Client] = db.session.query(Client).all()
+    clients = db.session.query(Client).all()
     clients_list = [u.to_json() for u in clients]
     return jsonify(clients_list), 200
 
@@ -31,7 +31,7 @@ def get_client_by_id(client_id: int):
     """
     Получение клиента по ид
     """
-    client: Client = db.session.get(Client, client_id)
+    client = db.session.get(Client, client_id)
     if client:
         return jsonify(client.to_json()), 200
 
@@ -70,7 +70,7 @@ def get_parking_by_id(parking_id: int):
     """
     Получение парковки по ид
     """
-    parking: Parking = db.session.get(Parking, parking_id)
+    parking = db.session.get(Parking, parking_id)
     if parking:
         return jsonify(parking.to_json()), 200
 
