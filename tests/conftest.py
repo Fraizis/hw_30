@@ -6,9 +6,8 @@ from datetime import datetime
 
 import pytest
 
-from module_30_ci_linters.hw.app.models import Client, ClientParking, Parking
-from module_30_ci_linters.hw.main import create_app
-from module_30_ci_linters.hw.main import db as _db
+from ...main import create_app, db as _db
+from ...models import Client, ClientParking, Parking
 
 
 @pytest.fixture
