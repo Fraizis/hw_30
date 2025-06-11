@@ -9,7 +9,7 @@ from sqlalchemy import UniqueConstraint
 from .database import db
 
 
-class Client(db.Model): # type: ignore[name-defined]
+class Client(db.Model):  # type: ignore[name-defined]
     """
     Модель таблицы client
     """
@@ -36,7 +36,7 @@ class Client(db.Model): # type: ignore[name-defined]
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 
-class Parking(db.Model): # type: ignore[name-defined]
+class Parking(db.Model):  # type: ignore[name-defined]
     """Модель таблицы parking"""
 
     __tablename__ = "parking"
@@ -61,7 +61,7 @@ class Parking(db.Model): # type: ignore[name-defined]
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 
-class ClientParking(db.Model): # type: ignore[name-defined]
+class ClientParking(db.Model):  # type: ignore[name-defined]
     """Модель таблицы client_parking"""
 
     __tablename__ = "client_parking"

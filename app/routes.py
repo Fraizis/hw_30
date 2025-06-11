@@ -3,7 +3,6 @@
 """
 
 from datetime import datetime
-from typing import List
 
 import sqlalchemy.exc
 from flask import Blueprint, jsonify, request
