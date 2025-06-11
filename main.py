@@ -6,8 +6,8 @@ import os
 
 from flask import Flask
 
-from database import db
-from routes import url_blueprint
+from app.database import db
+from app.routes import url_blueprint
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
