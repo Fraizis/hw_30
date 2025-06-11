@@ -26,7 +26,12 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install flake8 pytest black isort mypy pylint
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        
+
+    - name: Run pytest
+      run: |
+        pytest hw/tests/test_flask.py
+
+
     - name: Run linter black
       run: |
         black --diff --check hw/app/
@@ -46,7 +51,3 @@ jobs:
     - name: Run linter mypy
       run: |
         mypy hw/app/
-          
-    - name: Run pytest
-      run: |
-        pytest hw/tests/ 
