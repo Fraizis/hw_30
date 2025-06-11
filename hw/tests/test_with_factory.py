@@ -4,7 +4,7 @@
 
 from hw.app.models import Client, Parking
 
-from .factories import ClientFactory, ParkingFactory
+from factories import ClientFactory, ParkingFactory
 
 
 def test_create_client(db):
