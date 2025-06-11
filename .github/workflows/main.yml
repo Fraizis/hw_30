@@ -29,11 +29,11 @@ jobs:
         
     - name: Run linter black
       run: |
-        black --diff --check app/
+        black --diff --check hw/app/
         
     - name: Run linter isort
       run: |
-        isort --check-only --diff --profile black app/
+        isort --check-only --diff --profile black hw/app/
         
     - name: Run linter flake8
       run: |
@@ -41,12 +41,12 @@ jobs:
         
     - name: Run linter pylint
       run: |
-        pylint app/
+        pylint hw/app/
         
     - name: Run linter mypy
       run: |
-        mypy app/
+        mypy hw/app/
           
     - name: Run pytest
       run: |
-        pytest tests/ -v
+        pytest hw/tests/ -v
