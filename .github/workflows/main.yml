@@ -29,7 +29,7 @@ jobs:
 
     - name: Run pytest
       run: |
-        pytest hw/tests/test_flask.py
+        pytest hw/tests/test_with_factory.py
 
 
     - name: Run linter black
