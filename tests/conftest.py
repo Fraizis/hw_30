@@ -6,8 +6,9 @@ from datetime import datetime
 
 import pytest
 
-from main import create_app, db as _db
 from app.models import Client, ClientParking, Parking
+from main import create_app
+from main import db as _db
 
 
 @pytest.fixture
