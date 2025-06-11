@@ -6,8 +6,8 @@ import os
 
 from flask import Flask
 
-from app.database import db
-from app.routes import url_blueprint
+from app.database import db  # pylint: disable=import-error
+from app.routes import url_blueprint  # pylint: disable=import-error
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
