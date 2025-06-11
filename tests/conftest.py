@@ -6,8 +6,8 @@ from datetime import datetime
 
 import pytest
 
-from ...main import create_app, db as _db
-from ...models import Client, ClientParking, Parking
+from ..main import create_app, db as _db
+from ..models import Client, ClientParking, Parking
 
 
 @pytest.fixture
