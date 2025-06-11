@@ -2,7 +2,7 @@
 Тесты с использованием factory boy
 """
 
-from ..app.models import Client, Parking
+from models import Client, Parking
 from .factories import ClientFactory, ParkingFactory
 
 

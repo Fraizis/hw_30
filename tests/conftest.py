@@ -6,8 +6,8 @@ from datetime import datetime
 
 import pytest
 
-from ..main import create_app, db as _db
-from ..models import Client, ClientParking, Parking
+from main import create_app, db as _db
+from models import Client, ClientParking, Parking
 
 
 @pytest.fixture
@@ -63,14 +63,14 @@ def app():
 
 
 @pytest.fixture
-def client(app_client):
+def client(app):
     """Фикстура клиент"""
-    client_test = app_client.test_client()
+    client_test = app.test_client()
     yield client_test
 
 
 @pytest.fixture
-def db(app_client):
+def db(app):
     """Фикстура бд"""
-    with app_client.app_context():
+    with app.app_context():
         yield _db
