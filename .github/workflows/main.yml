@@ -29,24 +29,24 @@ jobs:
         
     - name: Run linter black
       run: |
-        black --diff --check . 
+        black --diff --check app/
         
     - name: Run linter isort
       run: |
-        isort --check-only --diff --profile black . 
+        isort --check-only --diff --profile black app/
         
     - name: Run linter flake8
       run: |
-        flake8 . --max-line-length 90
+        flake8 app/ --max-line-length 90
         
     - name: Run linter pylint
       run: |
-        pylint .
+        pylint app/
         
     - name: Run linter mypy
       run: |
-        mypy .
+        mypy app/
           
     - name: Run pytest
       run: |
-        pytest . -v
+        pytest tests/ -v
