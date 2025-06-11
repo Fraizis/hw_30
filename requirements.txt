@@ -4,4 +4,6 @@ flake8-bugbear
 flake8-pie
 isort
 mypy
-pytest
+pytest~=8.3.5
+Flask~=3.1.0
+SQLAlchemy~=2.0.41

@@ -4,8 +4,8 @@
 
 import os
 
-from app.database import db
-from app.routes import url_blueprint
+from database import db
+from routes import url_blueprint
 from flask import Flask
 
 basedir = os.path.abspath(os.path.dirname(__file__))

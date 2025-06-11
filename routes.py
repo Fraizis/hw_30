@@ -8,7 +8,7 @@ from typing import List
 import sqlalchemy.exc
 from flask import Blueprint, jsonify, request
 
-from .models import Client, ClientParking, Parking, db
+from models import Client, ClientParking, Parking, db
 
 url_blueprint = Blueprint(
     "url",

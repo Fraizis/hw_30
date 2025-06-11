@@ -6,7 +6,7 @@ from typing import Any, Dict
 
 from sqlalchemy import UniqueConstraint
 
-from .database import db
+from database import db
 
 
 class Client(db.Model):
